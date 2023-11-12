@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://sjton8ea3p08"]
+
+[ext_resource type="Script" path="res://scripts/ball.gd" id="1_0v8qi"]
+[ext_resource type="Texture2D" uid="uid://dr2mxv07km04w" path="res://sprites/ball_blue_small.png" id="1_3tob8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_updns"]
+radius = 16.0
+
+[node name="Ball" type="CharacterBody2D"]
+script = ExtResource("1_0v8qi")
+ball_start_speed = 10
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_updns")
+
+[node name="BallBlueSmall" type="Sprite2D" parent="."]
+texture = ExtResource("1_3tob8")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

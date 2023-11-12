@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dk4ufx8i8hm6r"]
+
+[ext_resource type="Texture2D" uid="uid://bfhbx708nhs8" path="res://sprites/button_blue.png" id="1_l7d22"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3kryj"]
+size = Vector2(129, 52)
+
+[node name="Brick" type="StaticBody2D" groups=["bricks"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_3kryj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_l7d22")
