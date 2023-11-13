@@ -6,9 +6,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b0in4"]
 size = Vector2(128, 32)
 
-[node name="Paddle" type="CharacterBody2D"]
+[node name="Paddle" type="CharacterBody2D" groups=["paddle"]]
+motion_mode = 1
 script = ExtResource("1_0qqet")
-SPEED = 300.0
 
 [node name="BlockNarrow" type="Sprite2D" parent="."]
 position = Vector2(64.0001, -15.9998)

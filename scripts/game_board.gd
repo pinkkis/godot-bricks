@@ -11,12 +11,14 @@ extends Node2D
 @onready var bricks = $Bricks
 @onready var score_label = $ScoreLabel
 @onready var game_over_label = $GameOverLabel
+@onready var game_win_label = $GameWinLabel
 
 var score = 0
 
 var ball_scene = preload("res://scenes/ball.tscn")
 var paddle_scene = preload("res://scenes/paddle.tscn")
 var paddle: Paddle
+var ball: Ball
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -26,7 +28,7 @@ func _process(_delta):
 	pass
 
 func spawn_ball():
-	var ball: Ball = ball_scene.instantiate()
+	ball = ball_scene.instantiate()
 	ball.ball_start_speed = ball_start_speed
 	ball.global_position = ball_start_position.global_position
 	ball.ball_lost.connect(_on_ball_ball_lost)
@@ -52,6 +54,11 @@ func _on_ball_ball_lost():
 func _on_ball_brick_hit():
 	score += 100
 	score_label.text = str(score)
+	print($Bricks.get_child_count())
+	if $Bricks.get_child_count() == 1:
+		ball.queue_free()
+		game_win_label.visible = true
+		
 
 func _on_start_pressed():
 	spawn_ball()
