@@ -86,6 +86,7 @@ text = "Level 1"
 horizontal_alignment = 1
 
 [node name="GameWinLabel" type="Label" parent="UI"]
+visible = false
 layout_mode = 0
 offset_left = 212.0
 offset_top = 144.0
