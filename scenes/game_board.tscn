@@ -1,18 +1,16 @@
-[gd_scene load_steps=7 format=3 uid="uid://c0g7nvoiai8cl"]
+[gd_scene load_steps=5 format=3 uid="uid://c0g7nvoiai8cl"]
 
 [ext_resource type="Texture2D" uid="uid://ypd2n0uf3k1f" path="res://sprites/background_brown.png" id="1_ahc6v"]
 [ext_resource type="Script" path="res://scripts/game_board.gd" id="1_whn1i"]
-[ext_resource type="PackedScene" uid="uid://dk4ufx8i8hm6r" path="res://scenes/brick.tscn" id="3_nt8bo"]
-[ext_resource type="Script" path="res://scripts/bricks.gd" id="4_q505s"]
 [ext_resource type="PackedScene" uid="uid://f21j21uc8foa" path="res://scenes/wall.tscn" id="5_b1vp3"]
 [ext_resource type="Script" path="res://scripts/AudioManager.gd" id="6_ev2g4"]
 
 [node name="GameBoard" type="Node2D"]
 script = ExtResource("1_whn1i")
-ball_start_speed = 150
+ball_start_speed = 200
 paddle_base_speed = 300
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Background" type="TextureRect" parent="."]
 offset_left = -192.0
 offset_top = -192.0
 offset_right = 1344.0
@@ -20,11 +18,92 @@ offset_bottom = 832.0
 texture = ExtResource("1_ahc6v")
 stretch_mode = 1
 
+[node name="UI" type="Control" parent="."]
+top_level = true
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 640.0
+
+[node name="StartButton" type="Button" parent="UI"]
+layout_mode = 0
+offset_left = 504.0
+offset_top = 328.0
+offset_right = 648.0
+offset_bottom = 384.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 31
+text = "Start"
+
+[node name="ScoreLabel" type="Label" parent="UI"]
+visible = false
+layout_mode = 0
+offset_left = 8.0
+offset_top = -2.0
+offset_right = 88.0
+offset_bottom = 40.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 30
+text = "Score"
+
+[node name="LivesLabel" type="Label" parent="UI"]
+visible = false
+layout_mode = 0
+offset_left = 1032.0
+offset_top = -2.0
+offset_right = 1168.0
+offset_bottom = 40.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 30
+text = "Lives 0"
+
+[node name="GameOverLabel" type="Label" parent="UI"]
+visible = false
+layout_mode = 0
+offset_left = 392.0
+offset_top = 152.0
+offset_right = 760.0
+offset_bottom = 264.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 64
+text = "GAME OVER"
+
+[node name="LevelLabel" type="Label" parent="UI"]
+visible = false
+layout_mode = 0
+offset_left = 392.0
+offset_top = 144.0
+offset_right = 768.0
+offset_bottom = 232.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 64
+text = "Level 1"
+horizontal_alignment = 1
+
+[node name="GameWinLabel" type="Label" parent="UI"]
+visible = false
+layout_mode = 0
+offset_left = 432.0
+offset_top = 152.0
+offset_right = 800.0
+offset_bottom = 264.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 64
+text = "YOU WIN"
+
 [node name="PaddleStartPosition" type="Node2D" parent="."]
 position = Vector2(512, 608)
 
 [node name="BallStartPosition" type="Node2D" parent="."]
 position = Vector2(576, 416)
+
+[node name="LevelStartPosition" type="Node2D" parent="."]
 
 [node name="Wall" parent="." groups=["wall"] instance=ExtResource("5_b1vp3")]
 position = Vector2(0, 4)
@@ -40,148 +119,12 @@ rotation = 1.5708
 position = Vector2(1148, -72)
 rotation = 1.5708
 
-[node name="Bricks" type="Node2D" parent="."]
-script = ExtResource("4_q505s")
-
-[node name="Brick5" parent="Bricks" instance=ExtResource("3_nt8bo")]
-position = Vector2(576, 96)
-
-[node name="Brick6" parent="Bricks" instance=ExtResource("3_nt8bo")]
-position = Vector2(704, 96)
-
-[node name="Brick7" parent="Bricks" instance=ExtResource("3_nt8bo")]
-position = Vector2(832, 96)
-
-[node name="Brick15" parent="Bricks" instance=ExtResource("3_nt8bo")]
-position = Vector2(960, 96)
-
-[node name="Brick8" parent="Bricks" instance=ExtResource("3_nt8bo")]
-position = Vector2(192, 96)
-
-[node name="Brick9" parent="Bricks" instance=ExtResource("3_nt8bo")]
-position = Vector2(320, 96)
-
-[node name="Brick10" parent="Bricks" instance=ExtResource("3_nt8bo")]
-position = Vector2(448, 96)
-
-[node name="Brick" parent="Bricks" instance=ExtResource("3_nt8bo")]
-modulate = Color(0.898039, 0.898039, 0.898039, 1)
-position = Vector2(128, 160)
-
-[node name="Brick2" parent="Bricks" instance=ExtResource("3_nt8bo")]
-modulate = Color(0.898039, 0.898039, 0.898039, 1)
-position = Vector2(256, 160)
-
-[node name="Brick3" parent="Bricks" instance=ExtResource("3_nt8bo")]
-modulate = Color(0.898039, 0.898039, 0.898039, 1)
-position = Vector2(384, 160)
-
-[node name="Brick4" parent="Bricks" instance=ExtResource("3_nt8bo")]
-modulate = Color(0.898039, 0.898039, 0.898039, 1)
-position = Vector2(512, 160)
-
-[node name="Brick11" parent="Bricks" instance=ExtResource("3_nt8bo")]
-modulate = Color(0.898039, 0.898039, 0.898039, 1)
-position = Vector2(640, 160)
-
-[node name="Brick12" parent="Bricks" instance=ExtResource("3_nt8bo")]
-modulate = Color(0.898039, 0.898039, 0.898039, 1)
-position = Vector2(768, 160)
-
-[node name="Brick13" parent="Bricks" instance=ExtResource("3_nt8bo")]
-modulate = Color(0.898039, 0.898039, 0.898039, 1)
-position = Vector2(896, 160)
-
-[node name="Brick14" parent="Bricks" instance=ExtResource("3_nt8bo")]
-modulate = Color(0.898039, 0.898039, 0.898039, 1)
-position = Vector2(1024, 160)
-
-[node name="Brick16" parent="Bricks" instance=ExtResource("3_nt8bo")]
-modulate = Color(0.764706, 0.764706, 0.764706, 1)
-position = Vector2(576, 224)
-
-[node name="Brick17" parent="Bricks" instance=ExtResource("3_nt8bo")]
-modulate = Color(0.764706, 0.764706, 0.764706, 1)
-position = Vector2(704, 224)
-
-[node name="Brick18" parent="Bricks" instance=ExtResource("3_nt8bo")]
-modulate = Color(0.764706, 0.764706, 0.764706, 1)
-position = Vector2(832, 224)
-
-[node name="Brick19" parent="Bricks" instance=ExtResource("3_nt8bo")]
-modulate = Color(0.764706, 0.764706, 0.764706, 1)
-position = Vector2(960, 224)
-
-[node name="Brick20" parent="Bricks" instance=ExtResource("3_nt8bo")]
-modulate = Color(0.764706, 0.764706, 0.764706, 1)
-position = Vector2(192, 224)
-
-[node name="Brick21" parent="Bricks" instance=ExtResource("3_nt8bo")]
-modulate = Color(0.764706, 0.764706, 0.764706, 1)
-position = Vector2(320, 224)
-
-[node name="Brick22" parent="Bricks" instance=ExtResource("3_nt8bo")]
-modulate = Color(0.764706, 0.764706, 0.764706, 1)
-position = Vector2(448, 224)
-
-[node name="StartButton" type="Button" parent="."]
-offset_left = 504.0
-offset_top = 328.0
-offset_right = 648.0
-offset_bottom = 384.0
-text = "Start"
-
-[node name="ScoreTextLabel" type="Label" parent="."]
-offset_left = 8.0
-offset_top = -2.0
-offset_right = 88.0
-offset_bottom = 40.0
-theme_override_font_sizes/font_size = 30
-text = "Score"
-
-[node name="ScoreLabel" type="Label" parent="."]
-offset_left = 96.0
-offset_top = -2.0
-offset_right = 200.0
-offset_bottom = 40.0
-theme_override_font_sizes/font_size = 30
-text = "0"
-
-[node name="LivesTextLabel" type="Label" parent="."]
-offset_left = 975.0
-offset_top = -2.0
-offset_right = 1111.0
-offset_bottom = 40.0
-theme_override_font_sizes/font_size = 30
-text = "Lives Left"
-
-[node name="LivesLabel" type="Label" parent="."]
-offset_left = 1127.0
-offset_top = -2.0
-offset_right = 1207.0
-offset_bottom = 40.0
-theme_override_font_sizes/font_size = 30
-text = "0"
-
-[node name="GameOverLabel" type="Label" parent="."]
-visible = false
-offset_left = 384.0
-offset_top = 288.0
-offset_right = 752.0
-offset_bottom = 400.0
-theme_override_font_sizes/font_size = 64
-text = "GAME OVER"
-
-[node name="GameWinLabel" type="Label" parent="."]
-visible = false
-offset_left = 432.0
-offset_top = 288.0
-offset_right = 800.0
-offset_bottom = 400.0
-theme_override_font_sizes/font_size = 64
-text = "YOU WIN"
-
 [node name="AudioManager" type="Node" parent="."]
 script = ExtResource("6_ev2g4")
 
-[connection signal="pressed" from="StartButton" to="." method="_on_start_pressed"]
+[node name="LevelStartTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="pressed" from="UI/StartButton" to="." method="_on_start_pressed"]
+[connection signal="timeout" from="LevelStartTimer" to="." method="_on_level_start_timer_timeout"]

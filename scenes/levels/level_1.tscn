@@ -1,0 +1,88 @@
+[gd_scene load_steps=3 format=3 uid="uid://ky2dj1r4glsl"]
+
+[ext_resource type="Script" path="res://scripts/bricks.gd" id="1_ofind"]
+[ext_resource type="PackedScene" uid="uid://dk4ufx8i8hm6r" path="res://scenes/brick.tscn" id="2_y8gqu"]
+
+[node name="Level1" type="Node2D"]
+script = ExtResource("1_ofind")
+
+[node name="Brick16" parent="." instance=ExtResource("2_y8gqu")]
+modulate = Color(0.764706, 0.764706, 0.764706, 1)
+position = Vector2(576, 224)
+
+[node name="Brick17" parent="." instance=ExtResource("2_y8gqu")]
+modulate = Color(0.764706, 0.764706, 0.764706, 1)
+position = Vector2(704, 224)
+
+[node name="Brick18" parent="." instance=ExtResource("2_y8gqu")]
+modulate = Color(0.764706, 0.764706, 0.764706, 1)
+position = Vector2(832, 224)
+
+[node name="Brick19" parent="." instance=ExtResource("2_y8gqu")]
+modulate = Color(0.764706, 0.764706, 0.764706, 1)
+position = Vector2(960, 224)
+
+[node name="Brick20" parent="." instance=ExtResource("2_y8gqu")]
+modulate = Color(0.764706, 0.764706, 0.764706, 1)
+position = Vector2(192, 224)
+
+[node name="Brick21" parent="." instance=ExtResource("2_y8gqu")]
+modulate = Color(0.764706, 0.764706, 0.764706, 1)
+position = Vector2(320, 224)
+
+[node name="Brick22" parent="." instance=ExtResource("2_y8gqu")]
+modulate = Color(0.764706, 0.764706, 0.764706, 1)
+position = Vector2(448, 224)
+
+[node name="Brick23" parent="." instance=ExtResource("2_y8gqu")]
+modulate = Color(0.870588, 0.870588, 0.870588, 1)
+position = Vector2(512, 144)
+
+[node name="Brick24" parent="." instance=ExtResource("2_y8gqu")]
+modulate = Color(0.870588, 0.870588, 0.870588, 1)
+position = Vector2(640, 144)
+
+[node name="Brick25" parent="." instance=ExtResource("2_y8gqu")]
+modulate = Color(0.870588, 0.870588, 0.870588, 1)
+position = Vector2(768, 144)
+
+[node name="Brick26" parent="." instance=ExtResource("2_y8gqu")]
+modulate = Color(0.870588, 0.870588, 0.870588, 1)
+position = Vector2(896, 144)
+
+[node name="Brick37" parent="." instance=ExtResource("2_y8gqu")]
+modulate = Color(0.870588, 0.870588, 0.870588, 1)
+position = Vector2(1024, 144)
+
+[node name="Brick27" parent="." instance=ExtResource("2_y8gqu")]
+modulate = Color(0.870588, 0.870588, 0.870588, 1)
+position = Vector2(128, 144)
+
+[node name="Brick28" parent="." instance=ExtResource("2_y8gqu")]
+modulate = Color(0.870588, 0.870588, 0.870588, 1)
+position = Vector2(256, 144)
+
+[node name="Brick29" parent="." instance=ExtResource("2_y8gqu")]
+modulate = Color(0.870588, 0.870588, 0.870588, 1)
+position = Vector2(384, 144)
+
+[node name="Brick30" parent="." instance=ExtResource("2_y8gqu")]
+position = Vector2(576, 64)
+
+[node name="Brick31" parent="." instance=ExtResource("2_y8gqu")]
+position = Vector2(704, 64)
+
+[node name="Brick32" parent="." instance=ExtResource("2_y8gqu")]
+position = Vector2(832, 64)
+
+[node name="Brick33" parent="." instance=ExtResource("2_y8gqu")]
+position = Vector2(960, 64)
+
+[node name="Brick34" parent="." instance=ExtResource("2_y8gqu")]
+position = Vector2(192, 64)
+
+[node name="Brick35" parent="." instance=ExtResource("2_y8gqu")]
+position = Vector2(320, 64)
+
+[node name="Brick36" parent="." instance=ExtResource("2_y8gqu")]
+position = Vector2(448, 64)
