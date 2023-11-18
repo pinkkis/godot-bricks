@@ -72,7 +72,7 @@ func _on_level_end():
 	else:
 		score_label.visible = false
 		lives_label.visible = false
-		game_win_label = 'You Win!\nScore: ' + str(score)
+		game_win_label = 'You Win! Score: ' + str(score)
 		game_win_label.visible = true 
 		start.visible = true
 
@@ -98,6 +98,7 @@ func load_level():
 func _on_start_pressed():
 	current_level = 1
 	lives = 3
+	score = 0
 	start.visible = false
 	score_label.visible = true
 	lives_label.visible = true
