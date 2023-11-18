@@ -54,7 +54,6 @@ func _on_ball_ball_lost():
 func _on_ball_brick_hit():
 	score += 100
 	score_label.text = str(score)
-	print($Bricks.get_child_count())
 	if $Bricks.get_child_count() == 1:
 		ball.queue_free()
 		game_win_label.visible = true

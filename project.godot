@@ -15,10 +15,13 @@ run/main_scene="res://scenes/game_board.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+AudioManager="*res://scripts/AudioManager.gd"
+
 [display]
 
-window/size/resizable=false
-window/stretch/scale_mode="integer"
+window/stretch/mode="viewport"
 
 [physics]
 

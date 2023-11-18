@@ -1,19 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://dk4ufx8i8hm6r"]
+[gd_scene load_steps=5 format=3 uid="uid://dk4ufx8i8hm6r"]
 
-[ext_resource type="Texture2D" uid="uid://bfhbx708nhs8" path="res://sprites/button_blue.png" id="1_l7d22"]
 [ext_resource type="Script" path="res://scripts/brick.gd" id="1_qjyb4"]
+[ext_resource type="Texture2D" uid="uid://dgi68sbdovrg5" path="res://sprites/button_grey.png" id="2_h82c8"]
+[ext_resource type="AudioStream" uid="uid://c76txd0e186ud" path="res://sounds/brick-break.wav" id="3_h86sg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3kryj"]
-size = Vector2(129, 52)
+size = Vector2(128, 52)
 
 [node name="Brick" type="StaticBody2D" groups=["bricks"]]
 script = ExtResource("1_qjyb4")
-brickTexture = ExtResource("1_l7d22")
+brickTexture = ExtResource("2_h82c8")
+breakSound = ExtResource("3_h86sg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, 0)
 shape = SubResource("RectangleShape2D_3kryj")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-texture = ExtResource("1_l7d22")
+texture = ExtResource("2_h82c8")

@@ -1,7 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://sjton8ea3p08"]
+[gd_scene load_steps=7 format=3 uid="uid://sjton8ea3p08"]
 
 [ext_resource type="Script" path="res://scripts/ball.gd" id="1_0v8qi"]
 [ext_resource type="Texture2D" uid="uid://dr2mxv07km04w" path="res://sprites/ball_blue_small.png" id="1_3tob8"]
+[ext_resource type="AudioStream" uid="uid://cwrpk1lu0a0fm" path="res://sounds/ball-lost.wav" id="2_s4dmb"]
+[ext_resource type="AudioStream" uid="uid://bj4b13not03wb" path="res://sounds/wall-hit.wav" id="3_ty3sw"]
+[ext_resource type="AudioStream" uid="uid://c8brrj2ypyy1r" path="res://sounds/paddle-hit.wav" id="4_clktx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_updns"]
 radius = 16.0
@@ -10,6 +13,9 @@ radius = 16.0
 motion_mode = 1
 script = ExtResource("1_0v8qi")
 ball_start_speed = 10
+ball_lost_sound = ExtResource("2_s4dmb")
+wall_hit_sound = ExtResource("3_ty3sw")
+paddle_hit_sound = ExtResource("4_clktx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_updns")
